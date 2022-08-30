@@ -1,0 +1,13 @@
+.navbar__btn {
+    font-weight: bold;
+    color: $color-blue;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+
+    & i{
+        margin: 5px;
+    }
+
+}
