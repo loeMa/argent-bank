@@ -6,8 +6,7 @@ import { useDispatch } from "react-redux";
 
 export const loginUser = (email, password) =>{
     
-    const usernameError = document.querySelector('.email.error');
-    const passwordError = document.querySelector('.password.error');
+    const error = document.querySelector('.error');
     
     return axios
     .post("http://localhost:3001/api/v1/user/login",{
@@ -17,11 +16,7 @@ export const loginUser = (email, password) =>{
     })
     .catch((err) =>{
         console.log(err);
-        if(err.response.data.message.includes("Password")){
-            passwordError.innerHTML = "Votre mot de passe est incorrect"
-        }else{
-            usernameError.innerHTML = " Votre Email est incorrect"
-        }
+        error.innerHTML = "Votre identifiant ou votre mot de passe est incorrect";
     })
     
     /* ({
@@ -59,6 +54,7 @@ export const getUserData = (token) =>{
         return {
             firstName : res.data.body.firstName,
             lastName : res.data.body.lastName,
+            email : res.data.body.email,
         }
     } )
     .catch((err) =>{
@@ -67,8 +63,35 @@ export const getUserData = (token) =>{
     
 }
 
-/* .post("http://localhost:3001/api/v1/user/profile",{ 
-        headers: { 
-            Authorization : `Bearer ${token}`
+export const editUserData = (token, firstName, lastName) =>{
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        },
+    }
+    const data = {
+        firstName: firstName,
+        lastName: lastName,
+     }
+console.log(firstName, lastName)
+    return axios
+    .put("http://localhost:3001/api/v1/user/profile",
+        
+        data,
+        config,
+        
+    )
+    
+    .then((res) => {
+        console.log(res.data.body)
+        return {
+            firstName : res.data.body.firstName,
+            lastName : res.data.body.lastName,
         }
-    })*/
+        
+    } )
+    .catch((err) =>{
+        console.log(err);
+    }) 
+    
+}

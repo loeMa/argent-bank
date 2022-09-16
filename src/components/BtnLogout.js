@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { selectUser } from '../feature/users.slice';
+import { logout, selectUser } from '../feature/users.slice';
 
 
 const BtnLogout = ({direction, fontsize, margin}) => {
@@ -9,14 +9,13 @@ const BtnLogout = ({direction, fontsize, margin}) => {
     const dispatch = useDispatch();
     const userLogout = useSelector(selectUser);
 
-    const logout = (e) =>{
-        
+    const logoutAction = (e) =>{
         localStorage.clear()
-        dispatch(logout)
+        dispatch(logout())
     }
 
     return (
-        <NavLink to="/sign-in" onClick={logout}>
+        <NavLink to="/sign-in" onClick={logoutAction}>
         <div className='navbar__btn'  style={{ flexDirection: direction}}>
             <i className="fa fa-sign-out"></i>
             <p style={{ fontSize: fontsize, margin: margin}}>Sign out</p>
