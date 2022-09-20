@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { editUser, login, selectUser } from '../feature/users.slice';
-import { editUserData, getUserData } from '../services/auth';
+import { editUser, selectUser } from '../feature/users.slice';
+import { editUserData } from '../services/auth';
 
 const WelcomeUser = () => {
 
@@ -34,23 +34,34 @@ const handleEdit = async() =>{
     return (
         <div>
             <div className="header">
-                <h1>Welcome back<br />{userData.firstName} {userData.lastName}</h1>
-                <button className="edit-button" onClick={() => setEdit(!edit)}>Edit Name</button>
+                <h1>Welcome back</h1>
+                
                 { edit ? (
-                    <div>
-                    <input
-                        defaultValue={userData.firstName}
-                        ref={firstInput} 
-                        autoFocus
-                    ></input>
-                    <input
-                        defaultValue={userData.lastName}
-                        ref={lastInput} 
-                    ></input>
-                    <button onClick={(e) => handleEdit(e)}>Valider</button>
+                    <div className='header__edit'>
+                        <div className='header__edit__input end'>
+                            <input
+                                defaultValue={userData.firstName}
+                                ref={firstInput} 
+                                autoFocus
+                            ></input>
+                            <button onClick={(e) => handleEdit(e)}>Save</button>
+                            
+
+                        </div>
+                        <div className='header__edit__input start'>
+                        <input
+                                defaultValue={userData.lastName}
+                                ref={lastInput} 
+                            ></input>
+                            
+                            <button onClick={(e) => setEdit(!edit)}>Cancel</button>
+                        </div>
                     </div>
                 ) : (
-                    ''
+                    <div>
+                    <h1>{userData.firstName} {userData.lastName}</h1>
+                    <button className="edit-button" onClick={() => setEdit(!edit)}>Edit Name</button>
+                    </div>
                 )  }
             </div>
         </div>

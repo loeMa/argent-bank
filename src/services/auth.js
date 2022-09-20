@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+
 
 
 
@@ -18,23 +17,6 @@ export const loginUser = (email, password) =>{
         console.log(err);
         error.innerHTML = "Votre identifiant ou votre mot de passe est incorrect";
     })
-    
-    /* ({
-        headers: {
-            Authorization: `Bearer ${token}`
-        }, 
-        method: "post",
-        url: "http://localhost:3001/api/v1/user/login",
-        withCredentials: false,
-        data:{
-            email,
-            password,
-        }, 
-
-    })*/
-
-
-    
 }
 
 export const getUserData = (token) =>{

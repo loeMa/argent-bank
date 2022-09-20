@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navigate, NavLink } from 'react-router-dom';
 import Card from '../components/Card';
 import WelcomeUser from '../components/WelcomeUser';
 

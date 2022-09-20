@@ -1,3 +1,40 @@
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+
+# ArgentBank : the bank app
+
+ArgentBank aims at developing a bank application to follow all transactions
+
+## Technologies
+
+- JS
+- SCSS
+- React
+- Nodejs
+
+## Prerequisites
+
+- NodeJS
+- npm
+
+
+## Installation
+Back-end:
+- Fork the repository and follow the instruction on: https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API
+- Lauch on port 3001 with npm run dev:server
+- Lauch npm run populate-db to start the database with 2 users
+
+Front-end:
+- Fork this repository
+- Clone it on your computer
+- The npm  install command will allow you to install the dependencies
+- The npm start command will allow you to run this application
+- Lauch on port 3000
+
+## Authors
+
+Chloé
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

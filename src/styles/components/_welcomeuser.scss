@@ -1,6 +1,6 @@
 .header {
     color: #fff !important;
-    margin-bottom: 2rem;
+    margin: 21px 0 32px 0;
     text-align: center;
 
     .edit-button {
@@ -9,5 +9,54 @@
         color: #fff;
         font-weight: bold;
         padding: 10px;
+        margin-top: 21px;
     }
+
+    &__edit{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 20px;
+        column-gap: 20px;
+
+
+        &__input{
+            
+            display: flex;
+            row-gap: 15px;
+            flex-direction: column;
+            
+
+            & button{
+                color: $color-bright-green;
+                background-color: white;
+                border-color: $color-bright-green;
+                width: 89px;
+                height: 30px;
+                font-weight: 600;
+                font-size: 14px;
+                border-radius: 2px;
+            }
+
+            & input{
+                height: 37px;
+                border-radius: 2px;
+                padding-left: 10px;
+                font-weight: 600;
+                font-size: 16px;
+                color: #979797;
+
+                &:focus{
+                    color: $color-blue;
+                }
+            }
+            
+        }
+    }
+}
+.end{
+    align-items: flex-end;
+}
+.start{
+    align-items: flex-start;
 }

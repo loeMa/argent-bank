@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {BrowserRouter , Routes, Route} from 'react-router-dom';
 import Footer from "./components/Footer";

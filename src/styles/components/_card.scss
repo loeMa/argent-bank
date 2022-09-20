@@ -19,6 +19,7 @@
     &__content{
         width: 100%;
         flex: 1;
+        color: $color-blue;
 
         &.cta{
             @media (min-width: 720px) {

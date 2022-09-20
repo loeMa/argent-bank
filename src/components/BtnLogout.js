@@ -1,13 +1,13 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import { logout, selectUser } from '../feature/users.slice';
+import { logout} from '../feature/users.slice';
 
 
 const BtnLogout = ({direction, fontsize, margin}) => {
 
     const dispatch = useDispatch();
-    const userLogout = useSelector(selectUser);
+
 
     const logoutAction = (e) =>{
         localStorage.removeItem("token")
