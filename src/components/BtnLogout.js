@@ -10,7 +10,7 @@ const BtnLogout = ({direction, fontsize, margin}) => {
     const userLogout = useSelector(selectUser);
 
     const logoutAction = (e) =>{
-        localStorage.clear()
+        localStorage.removeItem("token")
         dispatch(logout())
     }
 
