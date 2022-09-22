@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-const BtnAuth = ({direction, fontsize, margin}) => {
+const BtnAuth = ({direction, margin}) => {
 
 
 
@@ -10,7 +10,7 @@ const BtnAuth = ({direction, fontsize, margin}) => {
         <NavLink to="/sign-in" >
         <div className='navbar__btn' style={{ flexDirection: direction}}>
             <i className="fa fa-user-circle"></i>
-            <p style={{ fontSize: fontsize, margin: margin}}>Sign In</p>
+            <p style={{  margin: margin}}>Sign In</p>
         </div>
         </NavLink>
     );

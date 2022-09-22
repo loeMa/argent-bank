@@ -5,6 +5,9 @@ import { selectUser } from '../feature/users.slice';
 
 const BtnProfile = () => {
 
+    /**
+     * @type {Object}
+     */
     const userData = useSelector(selectUser);
 
     return (

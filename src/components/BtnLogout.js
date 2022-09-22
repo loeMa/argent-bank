@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { logout} from '../feature/users.slice';
 
 
-const BtnLogout = ({direction, fontsize, margin}) => {
+const BtnLogout = ({direction,  margin}) => {
 
     const dispatch = useDispatch();
 
@@ -18,7 +18,7 @@ const BtnLogout = ({direction, fontsize, margin}) => {
         <NavLink to="/sign-in" onClick={logoutAction}>
         <div className='navbar__btn'  style={{ flexDirection: direction}}>
             <i className="fa fa-sign-out"></i>
-            <p style={{ fontSize: fontsize, margin: margin}}>Sign out</p>
+            <p style={{ margin: margin}}>Sign out</p>
         </div>
         </NavLink>
     );
