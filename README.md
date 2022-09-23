@@ -33,6 +33,21 @@ Front-end:
 - The npm start command will allow you to run this application
 - Lauch on port 3000
 
+## Data test 
+Users in the API actually:
+
+Tony Stark
+- First Name: Tony
+- Last Name: Stark
+- Email: tony@stark.com
+- Password: password123
+
+Steve Rogers
+- First Name: Steve,
+- Last Name: Rogers,
+- Email: steve@rogers.com,
+- Password: password456
+
 ## Authors
 
 Chloé
