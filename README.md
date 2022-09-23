@@ -1,6 +1,6 @@
-![React](https://img.shields.io/badge/Made%20with-react-brightgreen?style=for-the-badge&=appveyor)   
-![SASS](https://img.shields.io/badge/Style%20with-SCSS-ff69b4?style=for-the-badge&=appveyor) 
-![alt text](https://github.com/loeMa/argent-bank/public/argentBankLogo.png?raw=true)
+![React](https://img.shields.io/badge/Made%20with-react-brightgreen?style=for-the-badge&=appveyor)   ![SASS](https://img.shields.io/badge/Style%20with-SCSS-ff69b4?style=for-the-badge&=appveyor) 
+
+![alt text](https://github.com/loeMa/argent-bank/blob/master/public/argentBankLogo.png?raw=true)
 
 
 # ArgentBank : the bank app
