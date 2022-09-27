@@ -4,8 +4,6 @@ import { NavLink } from 'react-router-dom';
 
 const BtnAuth = ({direction, margin}) => {
 
-
-
     return (
         <NavLink to="/sign-in" >
         <div className='navbar__btn' style={{ flexDirection: direction}}>

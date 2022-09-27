@@ -8,8 +8,7 @@ const BtnLogout = ({direction,  margin}) => {
 
     const dispatch = useDispatch();
 
-
-    const logoutAction = (e) =>{
+    const logoutAction = () =>{
         localStorage.removeItem("token")
         dispatch(logout())
     }

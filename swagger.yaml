@@ -113,7 +113,7 @@ paths:
         '500':
           description: Internal Server Error
   /transactions:
-    post:
+    get:
       security:
         - Bearer: []
       tags:
@@ -138,7 +138,7 @@ paths:
         '500':
           description: Internal Server Error
   /transactions/{idTransaction}:
-    post:
+    get:
       security:
         - Bearer: []
       tags:
@@ -202,6 +202,41 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
+    delete:
+      security:
+        - Bearer: []
+      tags:
+        - Transactions Module
+      summary: User one transaction API
+      description: API for updating a user transaction
+      parameters:
+        - in: path
+          name: idTransaction
+          description: ID of transaction
+          required: true
+          type: string
+        - in: header
+          name: Authorization
+          type: string
+          description: Attach Bearer JWT token
+          required: true
+        - in: body
+          name: body
+          description: delete user transaction attributes
+          required: true
+          schema:
+            $ref: '#/definitions/deleteTransaction'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction delete successully
+          schema:
+            $ref: '#/definitions/TransactionResponse'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
 securityDefinitions:
   Bearer:
     type: apiKey
@@ -259,13 +294,6 @@ definitions:
   TransactionResponse:
     type: object
     properties:
-      status:
-        type: integer
-      message: 
-        type: string
-      body:
-        type: object
-        properties:
           id:
             type: string
           userId:
@@ -277,6 +305,10 @@ definitions:
             type: integer
           category:
             type: string
+          balance:
+            type: integer
+          notes: 
+            type: string
   updateTransaction:
     type: object
     properties:
@@ -284,4 +316,10 @@ definitions:
         type: string
       notes:
         type: string
-        
+  deleteTransaction:
+    type: object
+    properties:
+      category:
+        type: string
+      notes:
+        type: string
