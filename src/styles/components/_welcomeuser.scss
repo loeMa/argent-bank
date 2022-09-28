@@ -1,6 +1,6 @@
 .header {
     color: #fff !important;
-    margin: 21px 0 32px 0;
+    margin: 21px 10px 32px 10px;
     text-align: center;
 
     .edit-button {
@@ -26,6 +26,7 @@
             row-gap: 15px;
             flex-direction: column;
             
+            
 
             & button{
                 color: $color-bright-green;
@@ -45,6 +46,8 @@
                 font-weight: 600;
                 font-size: 16px;
                 color: #979797;
+                box-sizing: border-box;
+                width: 100%;
 
                 &:focus{
                     color: $color-blue;
