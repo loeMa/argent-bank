@@ -14,7 +14,7 @@ const BtnLogout = ({direction,  margin}) => {
     }
 
     return (
-        <NavLink to="/sign-in" onClick={logoutAction}>
+        <NavLink to="/" onClick={logoutAction}>
         <div className='navbar__btn'  style={{ flexDirection: direction}}>
             <i className="fa fa-sign-out"></i>
             <p style={{ margin: margin}}>Sign out</p>
