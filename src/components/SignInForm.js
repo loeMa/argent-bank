@@ -11,10 +11,11 @@ const SignInForm = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [remember, setRemember] = useState(false);
     const localEmail = localStorage.getItem('email');
     const localRemember = localStorage.getItem('remember');
+    const [remember, setRemember] = useState(localRemember);
     const username = useRef();
+
 
     
 
@@ -22,22 +23,22 @@ const SignInForm = () => {
         e.preventDefault();
         const result = await loginUser(email || localEmail, password);
 
-        if(result && remember){
+        const data = {
+            username: username.current.value,
+            };
 
-            const data = {
-                username: username.current.value,
-                
-                };
+        if(result && remember ){
+
+                setRemember(true)
                 const token = result.data.body.token;
                 dispatch(updateToken({token: token})) ;
                 localStorage.setItem('token', token);
                 localStorage.setItem('email', data.username);
-                
                 localStorage.setItem('remember', remember);
-                console.log(remember)
+                
                 navigate('/dashboard')
                 
-        }else if(result && !remember){
+        }else if(result && remember === false ){
 
             const token = result.data.body.token;
             dispatch(updateToken({token: token})) ;
@@ -65,7 +66,7 @@ const SignInForm = () => {
             </div>
             <div className="form__remember">
                 
-                <input type="checkbox" id="remember-me" defaultChecked={localRemember? true : false}  onChange={(e) =>setRemember(e.target.checked)}/>
+                <input type="checkbox" id="remember-me" defaultChecked={localRemember === 'true'? true : false} onChange={(e) =>setRemember(e.target.checked)}/>
                 <label htmlFor="remember-me">Remember me</label>
             </div>
             <button type="submit" className="form__button">Sign In</button>

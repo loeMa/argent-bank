@@ -22,18 +22,16 @@ export const usersSlice = createSlice({
             state.token = null;
         },
         login : (state, {payload}) =>{
-            console.log(payload.firstName, state)
             state.email = payload.email;
             state.firstName = payload.firstName;
             state.lastName = payload.lastName; 
             state.isLogged = true;
-            console.log("LOGIN", state);
+            //console.log("LOGIN", state);
         },
         updateToken: (state, {payload}) =>{
             state.token = payload.token
         },
         editUser: (state, {payload}) =>{
-            console.log(state, 'yo', payload)
             state.firstName = payload.firstName;
             state.lastName = payload.lastName;  
             

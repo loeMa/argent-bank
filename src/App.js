@@ -20,7 +20,6 @@ function App() {
     const checkIsLoggin = async() =>{
       if(getToken){
         const userProfile = await getUserData(getToken);
-        console.log(userProfile)
         dispatch(login(userProfile))
         return userProfile
       }
