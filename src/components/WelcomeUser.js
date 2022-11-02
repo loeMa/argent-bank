@@ -20,12 +20,11 @@ const handleEdit = async() =>{
       firstName: firstInput.current.value,
       lastName: lastInput.current.value,
     };
+    
     if(data.firstName === userData.firstName && data.lastName === userData.lastName){
         console.log(firstInput ,userData.firstName)
     }else{
-        
         const updateProfile =  await editUserData(getToken,data.firstName, data.lastName)
-        console.log('yo', updateProfile)
         dispatch(editUser(updateProfile)); 
     }
     

@@ -19,7 +19,6 @@ export const loginUser = (email, password) =>{
         
     })
     .catch((err) =>{
-        console.log(err);
         error.innerHTML = "Votre identifiant ou votre mot de passe est incorrect";
     })
 }

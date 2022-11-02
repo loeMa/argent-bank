@@ -37,7 +37,7 @@ export const usersSlice = createSlice({
             
         }
     },
-    extraReducers: () =>{}
+    
 })
 
 export const { login, updateToken, logout, editUser } = usersSlice.actions;

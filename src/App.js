@@ -13,7 +13,7 @@ import { getUserData } from "./services/auth";
 function App() {
 
   const dispatch = useDispatch();
-  const user = useSelector(selectUser);
+  useSelector(selectUser);
   const getToken = localStorage.getItem("token");
   
   useEffect(() =>{

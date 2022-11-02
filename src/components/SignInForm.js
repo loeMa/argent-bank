@@ -16,9 +16,7 @@ const SignInForm = () => {
     const [remember, setRemember] = useState(localRemember);
     const username = useRef();
 
-
     
-
     const handleLogin = async(e) =>{
         e.preventDefault();
         const result = await loginUser(email || localEmail, password);
@@ -38,8 +36,7 @@ const SignInForm = () => {
                 
                 navigate('/dashboard')
                 
-        }else if(result && remember === false ){
-
+        }else if(result && (remember === false|| remember === null) ){
             const token = result.data.body.token;
             dispatch(updateToken({token: token})) ;
             localStorage.setItem('token', token);
